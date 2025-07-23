@@ -1,5 +1,5 @@
 function saying (whatIAmGenerating) {
-  const recognitions=[["="," being "],["RegExp","regular expression"],["replace","memory"],["[^\\w]"," "],["([A-Z])"," $1"],["const ","constantly "],["function","saying"],["match","archive"],["aeiou","breathing"],["split","language"],["floor","ground"],["length","extension"],["set","horizon"],["Timeout","ceasing"],[" +"," "]]
+  const recognitions=[["="," being "],["RegExp","regular expression"],["replace","memory"],["[^\\w]"," "],["([A-Z])"," $1"],["const ","constantly "],["function","saying"],["match","archive"],["aeiou","breathing"],["split","language"],["floor","ground"],["length","extension"],["case","sayable"],["set","horizon"],["Timeout","ceasing"],[" +"," "]]
   const moving=(qualities,here,there)=> qualities=qualities.replace(new RegExp(here,"g"),there)
   function continualMovement(theLifeWorldReading,recognitions) {
     for(const reading of recognitions) {
