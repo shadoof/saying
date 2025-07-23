@@ -91,14 +91,18 @@ function getHead(prevWord, lineNum) {
     }
   });
 }
-function colorSpansByOffset(leftEdge = 250, rightEdge = 700) {
+function colorSpansByOffset(leftRatio = 0.37, rightRatio = 0.85) {
   const scrollDiv = document.getElementById("scroll3");
+  if (!scrollDiv) return;
   const spans = scrollDiv.querySelectorAll("span");
+  const containerWidth = scrollDiv.offsetWidth;
+  const leftEdge = containerWidth * leftRatio;
+  const rightEdge = containerWidth * rightRatio;
   spans.forEach(span => {
     const offset = span.offsetLeft;
     if (offset > leftEdge && offset < rightEdge) {
       span.classList.add("red");
-    } else if (offset < leftEdge || offset > rightEdge) {
+    } else {
       span.classList.remove("red");
     }
   });
