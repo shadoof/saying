@@ -30,13 +30,9 @@ span.red {
   overflow: hidden;
 }
 .scroller {
+  margin: none;
   line-height: calc(var(--fontsize) * 1.8);
-  /* position: absolute; */
-  margin: auto;
-  /* top: calc(var(--display-height) / 2); */
-  /* left: 0; */
   width: var(--display-width);
-  /* height: var(--display-width); */
   overflow: hidden;
   white-space: nowrap;
 }
