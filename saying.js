@@ -36,13 +36,13 @@ function enclosing (thoughts) {
   return `<span>${thoughts} </span>`;
 }
 const longTail = "<span>" + "&nbsp;".repeat(100) + "</span>";
-async function scrollFirstWord(scrollContainer, wordSource, prevWord = "", lineNum, whatIAmGenerating, duration = 1500) {
+async function scrollFirstWord(scrollContainer, wordSource, prevWord = "", lineNum, whatIAmGenerating, duration = 1250) {
   let spanned = "";
   const spanRegex = /^<span[^>]*>(.*?)<\/span>/;
   while (true) {
     const wordToScroll = scrollContainer.firstChild;
     const amountToScroll = wordToScroll.offsetWidth;
-    const stepCount = Math.max(1, Math.floor(amountToScroll)); // at least 1 step
+    const stepCount = Math.max(1, Math.floor(amountToScroll));
     const stepSize = amountToScroll / stepCount;
     const stepTime = duration / stepCount;
     let currentStep = 0;
@@ -69,7 +69,7 @@ async function scrollFirstWord(scrollContainer, wordSource, prevWord = "", lineN
     [spanned, prevWord] = await wordSource(prevWord, lineNum, whatIAmGenerating);
     scrollContainer.innerHTML = decapitated + spanned + longTail;
     scrollContainer.scrollLeft = 0;
-    // await new Promise(r => setTimeout(r, 10)); // Small pause before next word
+    scrollContainer.scrollLeft += stepSize; // extra step for slight easing
   }
 }
 function getHead(prevWord, lineNum) {
