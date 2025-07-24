@@ -53,7 +53,7 @@ async function scrollFirstWord(scrollContainer, wordSource, prevWord = "", lineN
           resolve();
         } else {
           scrollContainer.scrollLeft += stepSize;
-          colorSpansByOffset();
+          colorSpansByOffset(scrollContainer);
           currentStep++;
           setTimeout(smoothScroll, stepTime);
         }
@@ -91,9 +91,8 @@ function getHead(prevWord, lineNum) {
     }
   });
 }
-function colorSpansByOffset(leftRatio = 0.37, rightRatio = 0.85) {
-  const scrollDiv = document.getElementById("scroll3");
-  if (!scrollDiv) return;
+function colorSpansByOffset(scrollDiv, leftRatio = 0.37, rightRatio = 0.85) {
+  if (scrollDiv.id != "scroll3") return;
   const spans = scrollDiv.querySelectorAll("span");
   const containerWidth = scrollDiv.offsetWidth;
   const leftEdge = containerWidth * leftRatio;

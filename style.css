@@ -19,7 +19,7 @@ span {
   -webkit-transition: color 2s ease-in-out;
 }
 span.red {
-  color: red;
+  color: #ff4136;
 }
 #container {
   position: relative;
