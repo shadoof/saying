@@ -1,5 +1,5 @@
 ### *The code is saying[.js]*
-This is a dynamic version (which will be further developed) of a piece first published in *Run Run Run* (ed. Nick Monfort, New York: Bad Quarto, 2025, p. 8). It loads its minimal text-generating code as its own supply text. In the <code>node.js</code> version, the JavaScript file itself is loaded locally. At the moment, this version uses a copy of text for the two generating functions of the code module, as displayed here:
+This is a dynamic version (which will be further developed) of a piece first published in *Run Run Run* (ed. Nick Montfort, New York: Bad Quarto, 2025, p. 8). It loads its minimal text-generating code as its own supply text. In the <code>node.js</code> version, the JavaScript file itself is loaded locally. At the moment, this version uses a copy of text for the two generating functions of the code module, as displayed here:
 
 ```
 function saying (whatIAmGenerating) {
